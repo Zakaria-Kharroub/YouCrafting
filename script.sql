@@ -1,5 +1,5 @@
 CREATE DATABASE
--- Table Utilisateur avec moteur InnoDB
+
 CREATE TABLE Utilisateur (
     id INT PRIMARY KEY,
     firstname VARCHAR(50),
@@ -9,7 +9,7 @@ CREATE TABLE Utilisateur (
     email VARCHAR(100)
 ) ENGINE=InnoDB;
 
--- Table Article avec moteur InnoDB
+
 CREATE TABLE Article (
     id INT PRIMARY KEY,
     titre VARCHAR(100),
@@ -19,7 +19,7 @@ CREATE TABLE Article (
     FOREIGN KEY (user_id) REFERENCES Utilisateur(id)
 ) ENGINE=InnoDB;
 
--- Table Administrateur avec moteur InnoDB
+
 CREATE TABLE Administrateur (
     id INT PRIMARY KEY,
     phone VARCHAR(20),

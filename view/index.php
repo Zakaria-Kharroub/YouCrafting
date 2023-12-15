@@ -9,7 +9,6 @@ $conn = $database->getConnect();
 $article = new Article($conn);
 $articles = $article->affArticle();
 
-// include '../CRUD/ajout.php';
 ?>
 
 <!DOCTYPE html>

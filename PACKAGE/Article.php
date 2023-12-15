@@ -69,6 +69,8 @@ class Article {
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+
+    // method ajout
     public function addArticle(){
         $query = $this->conn->prepare("INSERT INTO article (titre, contenu, date_de_creation, user_id) VALUES (:titre, :contenu, :date_de_creation, :user_id)");
         $query->bindParam(':titre', $this->titre);
@@ -78,10 +80,22 @@ class Article {
         $query->execute();
     }
 
-    public function deleteArticle()
-    {
+    // methode delete
+    public function deleteArticle(){
         $query = $this->conn->prepare("DELETE FROM article WHERE id = :id");
         $query->bindParam(':id', $this->id);
+        $query->execute();
+    }
+
+
+    // methode update
+    public function updateArticle(){
+        $query = $this->conn->prepare("UPDATE article SET titre = :titre, contenu = :contenu, date_de_creation = :date_de_creation, user_id = :user_id WHERE id = :id");
+        $query->bindParam(':id', $this->id);
+        $query->bindParam(':titre', $this->titre);
+        $query->bindParam(':contenu', $this->contenu);
+        $query->bindParam(':date_de_creation', $this->date_de_creation);
+        $query->bindParam(':user_id', $this->user_id);
         $query->execute();
     }
 }

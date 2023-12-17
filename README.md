@@ -95,6 +95,96 @@ echo '<br>';
 
 var_dump($voiture2 -> __toString());
 ```
+## attribut de class
+
+```
+class Cercle {
+```
+#### attributs
+```
+ private $rayon;
+```
+#### attributs de class
+```
+ private static $pi = 3.14;
+```
+#### methode
+
+```
+ public function __construct($rayon){
+        $this->rayon = $rayon;
+    }
+
+ public function getRayon(){
+        return $this->rayon;
+    }
+
+    public function setRayon($rayon){
+        $this->rayon = $rayon;
+    }
+```
+###  methode pour calculer la surface
+#### utilisation de l'attribut de class par [self::$pi] ou [static::$pi]
+```
+public function surface(){
+        return static::$pi * $this->rayon * $this->rayon;
+    }
+```
+#### instanciation
+
+```
+$cercle1 = new Cercle(5);
+$cercle2 = new Cercle(15);
+$cercle3 = new Cercle(25);
+
+echo '<h4>----- cercle 1 ---------</h4>';
+echo 'le rayon est : '. $cercle1->getRayon().'<br>';
+echo 'la surface est : '. $cercle1->surface().'<br>';
+
+echo '<h4>------- cercle 2 --------</h4>';
+echo 'le rayon est : '. $cercle2->getRayon().'<br>';
+echo 'la surface est : '. $cercle2->surface().'<br>';
+
+echo '<h4>------ cercle 3 ---------</h4>';
+echo 'le rayon est : '. $cercle3->getRayon().'<br>';
+echo 'la surface est : '. $cercle3->surface().'<br>';
+
+```
+
+ ### methode de class
+ 
+ #### par exmple le concept de la somme ne change pas
+ ####  meli katkun chi haja 3and lclass ne change pas et la meme methode k Tapliqua pour tous les objets
+ #### donc on peut utiliser les methodes de class
+
+```
+class Calcul{
+public static function somme ($a,$b){
+        return $a + $b;
+    }
+}
+```
+#### l'apelle de methode de class
+```
+$calcul = new Calcul();
+```
+#### tu peu utiliser cette methode 
+```
+echo $calcul::somme(5,10);
+```
+#### ou bien
+```
+echo Calcul::somme(5,10);
+```
+
+
+
+
+   
+
+
+
+
 
 
 

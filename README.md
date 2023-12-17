@@ -178,6 +178,69 @@ echo Calcul::somme(5,10);
 ```
 
 
+## heritage 
+
+### Class Personne
+```
+class Personne{
+    protected $nom;
+    protected $prenom;
+    protected $age;
+
+    public function getNom(){
+        return $this->nom;
+    }   
+
+    public function getPrenom(){
+        return $this->prenom;
+    }
+
+    public function getAge(){
+        return $this->age;
+    }
+ 
+    public function __construct($nom,$prenom,$age){
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->age = $age;
+    }
+}
+```
+
+### class Etudiant
+#### la class Etudiant hérite de la class Personne
+##### herite tous les attribut et les methode 
+##### visibility dans heritage utilise PROTECTED
+```
+require_once 'Personne.php';
+
+class Etudiant extends Personne {
+
+    private $note;
+   
+    public function __construct($nom,$prenom,$age,$note){
+        parent::__construct($nom,$prenom,$age);
+        $this->note = $note;
+    }
+    
+}
+```
+#### affichage
+```
+require_once 'Etudiant.php';
+
+$etudiant1 = new Etudiant('ahmed','ali',20,15);
+echo '<pre>';
+var_dump($etudiant1->getNom());
+echo '</pre>';
+
+
+```
+
+
+
+
+
 
 
    

@@ -125,6 +125,7 @@ class Cercle {
 ```
 ###  methode pour calculer la surface
 #### utilisation de l'attribut de class par [self::$pi] ou [static::$pi]
+> question formateur !!! 
 ```
 public function surface(){
         return static::$pi * $this->rayon * $this->rayon;

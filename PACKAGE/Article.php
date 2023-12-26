@@ -59,10 +59,7 @@ class Article {
         $this->user_id = $user_id;
     }
 
-
-
-
-
+    
     public function affArticle()
     {
         $query = $this->conn->query("SELECT * FROM article");
@@ -86,7 +83,6 @@ class Article {
         $query->bindParam(':id', $this->id);
         $query->execute();
     }
-
 
     // methode update
     public function updateArticle(){
